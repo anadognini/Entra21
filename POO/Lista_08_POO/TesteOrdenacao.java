@@ -41,33 +41,39 @@ public class TesteOrdenacao {
 
         Collections.sort(contas);
 
-        // Ordenando por ordem reversa
-        // Collections.reverse(contas);
-
         ContaPoupanca contaPrincipal;
 
         // Ordenando pelo número da conta
         // for (int i = 0; i < contas.size(); i++) {
-        //     contaPrincipal = contas.get(i);
-        //     System.out.println(contaPrincipal.getNumConta() + " ");
+        //  contaPrincipal = contas.get(i);
+        //  System.out.println(contaPrincipal.getNumConta() + " ");
         // }
+
+        // Ordenando por ordem reversa
+        // Collections.reverse(contas);
 
         // Ordenando por ordem alfabética
         // for (int i = 0; i < contas.size(); i++) {
-        // contaPrincipal = contas.get(i);
-        // System.out.println(contaPrincipal.getNomeCliente() + " ");
+        //  contaPrincipal = contas.get(i);
+        //  System.out.println(contaPrincipal.getNomeCliente() + " ");
         // }
 
-    //     for (int i = 0; i < contas.size(); i++) {
-    //         int rdm = contas.get(aleatorio.nextInt();
-    //         System.out.println(saldosAleatorios + " ");
-    //     }
+        // Adicionando novas contas aleatórias
+        
+        ContaPoupanca[] co = new ContaPoupanca[4];
+
+        for (int i = 0; i < co.length; i++) {
+            co[i] = new ContaPoupanca();
+            co[i].saldo = random.nextDouble() * 2000;
+        }
+
+        contas.add(co[0]);
+        contas.add(co[1]);
+        contas.add(co[2]);
+        contas.add(co[3]);
+
+        for (ContaPoupanca cp : contas) {
+            System.out.println(cp.saldo + " ");
+        }
     }
 }
-
-/**
- * Insira novas contas através de um laço atribuindo saldos aleatórioscom um
- * objeto (java.util.Random) altere a ordenação para o saldo.
- * Teste a ordenação.Dica: utilize um array ContaPoupanca[ ] e utilize em random
- * nextDouble * 2000
- */
