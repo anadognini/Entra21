@@ -1,0 +1,36 @@
+Final X Static
+
+"Final" em variáveis, quer dizer que não se pode atribuir valor duas vezes à variável. A variável terá um valor constante para a instância em que for declarado.
+
+"Static" quer dizer que a variável pertence a classe, não ao objeto, isso quer dizer que ela só será instanciada uma vez na memória, ou seja: todas as instâncias de uma 
+classe enxergarão a mesma variável. Caso uma delas modifique o valor, isso irá refletir em todas as outras instâncias. Um atributo quando declarado com o modificador static 
+tem a característica de "propagar o seu valor" por todas as instâncias da classe a que pertence, ou seja o seu valor será o mesmo para todas as instâncias. O objetivo de 
+static não é implementar imutabilidade, mas sim o de declarar o membro (método, "campo", "propriedade", "atributo"...) em uma classe em vez de publicar em um objeto 
+(uma instância da classe). Mas este membro estático não é imutável, uma vez que a qualquer momento você pode atribuir outro valor a ele (mudar sua referência para a de outro 
+objeto) ou mesmo mudar o estado do objeto que ele referencia.
+
+Suponha que a classe que você declarou essas variáveis chama-se (Test) ao criar um objeto a partir dessa classe sua variável do tipo static final não pode ser alterada o 
+valor por exemplo você não pode fazer isso:
+
+Test test = new Test(); 
+test.setA(20); // Você não consegue mudar o valor da variável.
+       
+Já na variável somente static você pode mudar o valor:
+
+Exemplo Test test = new Test();
+test.setB(20); // Você consegue altear o valor da variável
+
+Isso é possível porém se você instanciar outro objeto com outro valor, por exemplo:
+
+Test test2 = new Test();
+test2.setB(30);
+
+Vai prevalecer o valor do ultimo objeto instanciado e test.setB(20); deixa de existir. Você não pode ter mais de um objeto com valores diferentes quando é do tipo static.
+
+A palavra chave final sim, esta ajuda a implementar objetos imutáveis, já que só se pode atribuir valor ao membro "final" uma única vez e já que o compilador exige que este 
+valor seja atribuído já no construtor da classe (caso não tenha sido atribuído já na própria declaração do membro estático).
+
+Para uma constante se usa os dois modificadores, pois o mesmo valor vai ser visto por todas as instâncias da classe (static) e nunca vai poder ser modificado depois 
+de inicializado (final).
+
+public static final int exemplo = 10;
