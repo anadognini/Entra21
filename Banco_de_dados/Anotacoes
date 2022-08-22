@@ -1,0 +1,49 @@
+Workbench e Oracle chamam os databases de "schemas".
+
+- Deleta o banco de dados selecionado:
+
+drop schema nome_database;
+drop database nome_database;
+
+- Cria um banco de dados:
+
+create database nome_database;
+create schema nome_database;
+
+- Seleciona o banco de dados desejado:
+
+use nome_database;
+
+- Mostra todos os bancos de dados existentes:
+
+show databases;
+show schemas;
+
+- Mostra todas as tabelas dentro do banco de dados selecionado:
+
+show tables;
+
+- Adicionando um novo atributo a uma tabela:
+
+alter table nome_tabela add nome_atribuuto tipo;
+alter table nome_table add (nome_atributo tipo);
+
+- Deletar uma tabela:
+
+drop table nome_tabela;
+
+- Verificar os atributos de uma tabela:
+
+describe nome_tabela;
+
+- Apagar uma coluna ou linha de uma tabela:
+
+alter table nome_tabela drop nome_linha_ou_coluna;
+
+- O comando IF NOT EXISTS irá criar uma tabela independentemente de ela já existir:
+
+create table IF NOT EXISTS departamento(codigo_dep int AUTO_INCREMENT PRIMARY KEY, nome varchar(50) not null);
+
+- Criando a tabela cliente:
+
+CREATE  TABLE Cliente(codigo int, nome varchar(50) not null, endereco varchar(150) not null, cod_departamento int not null, CONSTRAINT pk_cliente PRIMARY KEY (codigo), CONSTRAINT fk_cliente FOREIGN KEY (cod_departamento) references Departamento(codigo_dep));
