@@ -83,3 +83,22 @@ values (
 
 // Mostra todos os valores dentro da tabela
 select * from vendedor;
+
+// Inserindo valores na tabela cliente
+INSERT INTO cliente (
+    codigoCliente,
+    nomeCliente,
+    enderecoCliente,
+    faturamento,
+    limite,
+    codVendedor)
+values (
+    1,
+    "Ana Júlia", 
+    "Rua 7 de Setembro", 
+    3000,
+    10000,
+    2
+);
+
+select * from cliente;
