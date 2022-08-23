@@ -1,11 +1,51 @@
-create table vendedor (codigo int, nome varchar(50) not null, endereco varchar (150) not null, comissao int not null, CONSTRAINT pk_vendedor 
-PRIMARY KEY (codigo));
+create table vendedor (
+	codigo int, 
+    nome varchar(50) not null, 
+    endereco varchar (150) not null, 
+    comissao int not null, 
+    CONSTRAINT pk_vendedor PRIMARY KEY (codigo)
+);
 
-create table cliente (codigoCliente int PRIMARY KEY, nomeCliente varchar(50) not null, enderecoCliente varchar (150) not null, faturamento float 
-not null, limite int, codVendedor int not null, constraint fk_cliente foreign key (codVendedor) references vendedor(codigo));
+create table cliente (
+	codigoCliente int auto_increment PRIMARY KEY, 
+    nomeCliente varchar(50) not null, 
+    enderecoCliente varchar (150) not null, 
+    faturamento float not null, 
+    limite int, 
+    codVendedor int not null, 
+    constraint fk_cliente foreign key (codVendedor) references vendedor(codigo)
+    );
 
-create table armazem (codigoArmazem int PRIMARY KEY, enderecoArmazem varchar(150) not null);
+create table armazem (
+	codigoArmazem int auto_increment PRIMARY KEY, 
+    enderecoArmazem varchar(150) not null
+);
 
-create table peca (codigoPeca int PRIMARY KEY, descricao varchar (100), preco float not null, quantidade int not null, numeroArmazem int not null, constraint fk_peca foreign key (numeroArmazem) references armazem(codigoArmazem)); 
+create table peca (
+	codigoPeca int auto_increment PRIMARY KEY, 
+    descricao varchar (100), 
+    preco float not null, 
+    quantidade int not null, 
+    numeroArmazem int not null, 
+    constraint fk_peca foreign key (numeroArmazem) references armazem (codigoArmazem)
+); 
 
-create table pedido 
+create table pedido (
+	codigoPedido int AUTO_INCREMENT PRIMARY KEY, 
+    dataPedido datetime, 
+    codigoCliente int not null, 
+    codigoVendedor int not null, 
+    codigoPeca int not null, 
+    CONSTRAINT fk_pedidoC foreign key (codigoCliente) references cliente (codigoCliente), 
+    CONSTRAINT fk_pedidoV foreign key (codigoVendedor) references vendedor (codigo), 
+    CONSTRAINT fk_pedidoP foreign key (codigoPeca) references peca (codigoPeca)
+);
+
+create table item (
+    codigoItem int auto_increment primary key,
+    codigoPedido int not null,
+    codigoPeca int not null,
+    qtde int not null,
+    constraint fk_itemPedido foreign key (codigoPedido) references pedido(codigoPedido),
+    constraint fk_itemPeca foreign key (codigoPeca) references peca(codigoPeca)
+);
