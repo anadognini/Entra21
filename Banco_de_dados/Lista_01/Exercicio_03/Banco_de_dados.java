@@ -48,7 +48,7 @@ create table pedido (
 
 // Criando a tabela item
 create table item (
-    codigoItem int auto_increment primary key,
+    codigoItem int auto_increment PRIMARY KEY,
     codigoPedido int not null,
     codigoPeca int not null,
     qtde int not null,
