@@ -1,5 +1,5 @@
 CREATE TABLE notaFiscal (
-	  id int not null auto_increment primary key,
+    id int not null auto_increment primary key,
     idNf int not null,
     idItem int not null,
     codigoProduto int not null,
@@ -9,7 +9,7 @@ CREATE TABLE notaFiscal (
 );
     
 INSERT INTO notaFiscal (
-	  idNf,
+    idNf,
     idItem,
     codigoProduto,
     valorUnitario,
@@ -17,7 +17,7 @@ INSERT INTO notaFiscal (
     desconto
 )
 values (
-	  1,
+    1,
     1,
     1,
     25,
@@ -26,7 +26,7 @@ values (
 );
 
 INSERT INTO notaFiscal (
-	  idNf,
+    idNf,
     idItem,
     codigoProduto,
     valorUnitario,
@@ -34,7 +34,7 @@ INSERT INTO notaFiscal (
     desconto
 )
 values (
-	  1,
+    1,
     2,
     2,
     14,
@@ -43,7 +43,7 @@ values (
 );
 
 INSERT INTO notaFiscal (
-	  idNf,
+    idNf,
     idItem,
     codigoProduto,
     valorUnitario,
@@ -51,7 +51,7 @@ INSERT INTO notaFiscal (
     desconto
 )
 values (
-	  1,
+    1,
     3,
     3,
     15,
@@ -60,7 +60,7 @@ values (
 );
 
 INSERT INTO notaFiscal (
-	  idNf,
+    idNf,
     idItem,
     codigoProduto,
     valorUnitario,
@@ -68,7 +68,7 @@ INSERT INTO notaFiscal (
     desconto
 )
 values (
-	  1,
+    1,
     4,
     4,
     10,
@@ -77,7 +77,7 @@ values (
 );
 
 INSERT INTO notaFiscal (
-	  idNf,
+    idNf,
     idItem,
     codigoProduto,
     valorUnitario,
@@ -85,7 +85,7 @@ INSERT INTO notaFiscal (
     desconto
 )
 values (
-	  1,
+    1,
     5,
     5,
     30,
@@ -94,7 +94,7 @@ values (
 );
 
 INSERT INTO notaFiscal (
-	  idNf,
+    idNf,
     idItem,
     codigoProduto,
     valorUnitario,
@@ -102,7 +102,7 @@ INSERT INTO notaFiscal (
     desconto
 )
 values (
-	  4,
+    4,
     1,
     5,
     30,
@@ -111,7 +111,7 @@ values (
 );
 
 INSERT INTO notaFiscal (
-	  idNf,
+    idNf,
     idItem,
     codigoProduto,
     valorUnitario,
@@ -119,7 +119,7 @@ INSERT INTO notaFiscal (
     desconto
 )
 values (
-	4,
+    4,
     3,
     1,
     25,
