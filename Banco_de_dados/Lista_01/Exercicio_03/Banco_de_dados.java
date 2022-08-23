@@ -68,3 +68,18 @@ values (
     "Rua América", 
     305
 );
+
+INSERT INTO vendedor (
+	codigo,
+	nome,
+    endereco,
+    comissao)
+values (
+	1,
+	"Eduardo", 
+    "General Osório", 
+    118
+);
+
+// Mostra todos os valores dentro da tabela
+select * from vendedor;
