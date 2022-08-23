@@ -130,3 +130,7 @@ values (
 // Letra a
 SELECT n.idNf, n.idItem, n.codigoProduto, n.valorUnitario FROM notaFiscal n
 WHERE n.desconto IS NULL;
+
+// Letra b
+SELECT n.idNf, n.idItem, n.codigoProduto, n.valorUnitario, (valorUnitario - (valorUnitario * (desconto / 100))) as valorVendido FROM notaFiscal n
+WHERE n.desconto IS NOT NULL;
