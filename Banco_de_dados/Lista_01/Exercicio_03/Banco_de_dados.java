@@ -56,14 +56,15 @@ create table item (
     constraint fk_itemPeca foreign key (codigoPeca) references peca(codigoPeca)
 );
 
+// Inserindo valores na tabela vendedor
 INSERT INTO vendedor (
-	codigo,
-	nome,
+    codigo,
+    nome,
     endereco,
     comissao)
 values (
-	2,
-	"Roberto", 
+    2,
+    "Roberto", 
     "Rua América", 
     305
 );
