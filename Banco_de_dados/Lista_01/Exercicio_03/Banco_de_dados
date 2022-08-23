@@ -1,5 +1,5 @@
 create table vendedor (
-	codigo int, 
+    codigo int, 
     nome varchar(50) not null, 
     endereco varchar (150) not null, 
     comissao int not null, 
@@ -7,7 +7,7 @@ create table vendedor (
 );
 
 create table cliente (
-	codigoCliente int auto_increment PRIMARY KEY, 
+    codigoCliente int auto_increment PRIMARY KEY, 
     nomeCliente varchar(50) not null, 
     enderecoCliente varchar (150) not null, 
     faturamento float not null, 
@@ -17,12 +17,12 @@ create table cliente (
     );
 
 create table armazem (
-	codigoArmazem int auto_increment PRIMARY KEY, 
+    codigoArmazem int auto_increment PRIMARY KEY, 
     enderecoArmazem varchar(150) not null
 );
 
 create table peca (
-	codigoPeca int auto_increment PRIMARY KEY, 
+    codigoPeca int auto_increment PRIMARY KEY, 
     descricao varchar (100), 
     preco float not null, 
     quantidade int not null, 
@@ -31,7 +31,7 @@ create table peca (
 ); 
 
 create table pedido (
-	codigoPedido int AUTO_INCREMENT PRIMARY KEY, 
+    codigoPedido int AUTO_INCREMENT PRIMARY KEY, 
     dataPedido datetime, 
     codigoCliente int not null, 
     codigoVendedor int not null, 
