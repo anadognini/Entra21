@@ -70,13 +70,13 @@ values (
 );
 
 INSERT INTO vendedor (
-	codigo,
-	nome,
+    codigo,
+    nome,
     endereco,
     comissao)
 values (
-	1,
-	"Eduardo", 
+    1,
+    "Eduardo", 
     "General Osório", 
     118
 );
