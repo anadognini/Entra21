@@ -1,3 +1,4 @@
+// Criando a tabela vendedor
 create table vendedor (
     codigo int, 
     nome varchar(50) not null, 
@@ -6,6 +7,7 @@ create table vendedor (
     CONSTRAINT pk_vendedor PRIMARY KEY (codigo)
 );
 
+// Criando a tabela cliente
 create table cliente (
     codigoCliente int auto_increment PRIMARY KEY, 
     nomeCliente varchar(50) not null, 
@@ -16,11 +18,13 @@ create table cliente (
     constraint fk_cliente foreign key (codVendedor) references vendedor(codigo)
     );
 
+// Criando a tabela armazém
 create table armazem (
     codigoArmazem int auto_increment PRIMARY KEY, 
     enderecoArmazem varchar(150) not null
 );
 
+// Criando a tabela peça
 create table peca (
     codigoPeca int auto_increment PRIMARY KEY, 
     descricao varchar (100), 
@@ -30,6 +34,7 @@ create table peca (
     constraint fk_peca foreign key (numeroArmazem) references armazem (codigoArmazem)
 ); 
 
+// Criando a tabela pedido
 create table pedido (
     codigoPedido int AUTO_INCREMENT PRIMARY KEY, 
     dataPedido datetime, 
@@ -41,6 +46,7 @@ create table pedido (
     CONSTRAINT fk_pedidoP foreign key (codigoPeca) references peca (codigoPeca)
 );
 
+// Criando a tabela item
 create table item (
     codigoItem int auto_increment primary key,
     codigoPedido int not null,
