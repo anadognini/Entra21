@@ -137,5 +137,5 @@ WHERE n.desconto IS NOT NULL;
 
 -- Letra c
 UPDATE notaFiscal
-SET desconto = 0
-WHERE desconto IS NULL;
+SET notaFiscal.desconto = 0
+WHERE notaFiscal.desconto IS NULL;
