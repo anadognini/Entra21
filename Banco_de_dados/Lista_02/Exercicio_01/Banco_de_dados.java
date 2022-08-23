@@ -127,10 +127,15 @@ values (
     5
 );
 
-// Letra a
+-- Letra a
 SELECT n.idNf, n.idItem, n.codigoProduto, n.valorUnitario FROM notaFiscal n
 WHERE n.desconto IS NULL;
 
-// Letra b
+-- Letra b
 SELECT n.idNf, n.idItem, n.codigoProduto, n.valorUnitario, (valorUnitario - (valorUnitario * (desconto / 100))) as valorVendido FROM notaFiscal n
 WHERE n.desconto IS NOT NULL;
+
+-- Letra c
+UPDATE notaFiscal
+SET desconto = 0
+WHERE desconto IS NULL;
