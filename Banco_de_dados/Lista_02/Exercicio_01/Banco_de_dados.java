@@ -165,3 +165,9 @@ GROUP by codigoProduto;
 SELECT idNf, codigoProduto, quantidade FROM notaFiscal
 WHERE quantidade >= 10
 GROUP by idNf, codigoProduto;
+
+-- Letra i 
+SELECT idNf, sum(quantidade * valorUnitario) as valorTotal FROM notaFiscal
+GROUP by idNf
+HAVING (valorTotal) > 500
+ORDER by valorTotal DESC;
