@@ -171,3 +171,8 @@ SELECT idNf, sum(quantidade * valorUnitario) as valorTotal FROM notaFiscal
 GROUP by idNf
 HAVING (valorTotal) > 500
 ORDER by valorTotal DESC;
+
+-- Letra j
+SELECT codigoProduto, avg(desconto) as media from notaFiscal n 
+WHERE (desconto) > 0
+GROUP BY codigoProduto;
