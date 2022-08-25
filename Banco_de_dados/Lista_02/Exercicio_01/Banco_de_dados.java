@@ -159,7 +159,7 @@ GROUP by n.idNf
 ORDER by valorVendido DESC;
 
 -- Letra g
-SELECT codigoProduto, quantidade 
+SELECT codigoProduto, max(quantidade) as quantidade
 FROM notaFiscal
 GROUP by codigoProduto;
 
