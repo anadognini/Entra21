@@ -128,11 +128,13 @@ values (
 );
 
 -- Letra a
-SELECT n.idNf, n.idItem, n.codigoProduto, n.valorUnitario FROM notaFiscal n
+SELECT n.idNf, n.idItem, n.codigoProduto, n.valorUnitario 
+FROM notaFiscal n
 WHERE n.desconto IS NULL;
 
 -- Letra b
-SELECT n.idNf, n.idItem, n.codigoProduto, n.valorUnitario, (valorUnitario - (valorUnitario * (desconto / 100))) as valorVendido FROM notaFiscal n
+SELECT n.idNf, n.idItem, n.codigoProduto, n.valorUnitario, (valorUnitario - (valorUnitario * (desconto / 100))) as valorVendido 
+FROM notaFiscal n
 WHERE n.desconto IS NOT NULL;
 
 -- Letra c
@@ -140,39 +142,53 @@ UPDATE notaFiscal
 SET notaFiscal.desconto = 0
 WHERE notaFiscal.desconto IS NULL;
 
--- Letra d
-SELECT n.idNf, n.idItem, n.codigoProduto, n.valorUnitario, n.desconto, (quantidade * valorUnitario) as valorTotal, (valorUnitario - (valorUnitario * (desconto / 100))) as valorVendido FROM notaFiscal n
+-- Letra d 
+SELECT n.idNf, n.idItem, n.codigoProduto, n.valorUnitario, n.desconto, (quantidade * valorUnitario) as valorTotal, (valorUnitario - (valorUnitario * (desconto / 100))) as valorVendido 
+FROM notaFiscal n
 WHERE desconto > 0;
 
-SELECT n.idNf, n.idItem, n.codigoProduto, n.valorUnitario, n.desconto, (quantidade * valorUnitario) as valorTotal, (quantidade * valorUnitario) as valorVendido FROM notaFiscal n
+SELECT n.idNf, n.idItem, n.codigoProduto, n.valorUnitario, n.desconto, (quantidade * valorUnitario) as valorTotal, (quantidade * valorUnitario) as valorVendido 
+FROM notaFiscal n
 WHERE desconto = 0;
 
 -- Letra e
-SELECT n.idNf, sum(quantidade * valorUnitario) as valorTotal FROM notaFiscal n
+SELECT n.idNf, sum(quantidade * valorUnitario) as valorTotal 
+FROM notaFiscal n
 GROUP by n.idNf
 ORDER by valorTotal DESC;
 
 -- Letra f
-SELECT n.idNf, sum(quantidade * valorUnitario) as valorTotal, sum(valorUnitario - (valorUnitario * (desconto/100))) as valorVendido FROM NotaFiscal n
+SELECT n.idNf, sum(quantidade * valorUnitario) as valorTotal, sum(valorUnitario - (valorUnitario * (desconto/100))) as valorVendido 
+FROM NotaFiscal n
 GROUP by n.idNf
 ORDER by valorVendido DESC;
 
 -- Letra g
-SELECT codigoProduto, quantidade FROM notaFiscal
+SELECT codigoProduto, quantidade 
+FROM notaFiscal
 GROUP by codigoProduto;
 
 -- Letra h
-SELECT idNf, codigoProduto, quantidade FROM notaFiscal
+SELECT idNf, codigoProduto, quantidade 
+FROM notaFiscal
 WHERE quantidade >= 10
 GROUP by idNf, codigoProduto;
 
 -- Letra i 
-SELECT idNf, sum(quantidade * valorUnitario) as valorTotal FROM notaFiscal
+SELECT idNf, sum(quantidade * valorUnitario) as valorTotal 
+FROM notaFiscal
 GROUP by idNf
 HAVING (valorTotal) > 500
 ORDER by valorTotal DESC;
 
 -- Letra j
-SELECT codigoProduto, avg(desconto) as media from notaFiscal n 
+SELECT codigoProduto, avg(desconto) as media 
+FROM notaFiscal n 
 WHERE (desconto) > 0
 GROUP BY codigoProduto;
+
+-- Letra k
+SELECT codigoProduto, min(desconto) as minimo, max(desconto) as maximo, avg(desconto) as media 
+FROM notaFiscal n
+WHERE (desconto) > 0
+GROUP by codigoProduto;
