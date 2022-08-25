@@ -151,3 +151,8 @@ WHERE desconto = 0;
 SELECT n.idNf, sum(quantidade * valorUnitario) as valorTotal FROM notaFiscal n
 GROUP by n.idNf
 ORDER by valorTotal DESC;
+
+-- Letra f
+SELECT n.idNf, sum(quantidade * valorUnitario) as valorTotal, sum(valorUnitario - (valorUnitario * (desconto/100))) as valorVendido FROM NotaFiscal n
+GROUP by n.idNf
+ORDER by valorVendido DESC;
