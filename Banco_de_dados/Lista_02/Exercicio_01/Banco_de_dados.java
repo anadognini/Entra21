@@ -139,3 +139,6 @@ WHERE n.desconto IS NOT NULL;
 UPDATE notaFiscal
 SET notaFiscal.desconto = 0
 WHERE notaFiscal.desconto IS NULL;
+
+-- Letra d
+SELECT n.idNf, n.idItem, n.codigoProduto, n.valorUnitario, n.desconto, (quantidade * valorUnitario) as valorTotal, (valorUnitario - (valorUnitario * (desconto / 100))) as valorVendido FROM notaFiscal n;
