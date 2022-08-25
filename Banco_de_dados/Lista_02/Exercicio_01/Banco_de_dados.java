@@ -160,3 +160,8 @@ ORDER by valorVendido DESC;
 -- Letra g
 SELECT codigoProduto, quantidade FROM notaFiscal
 GROUP by codigoProduto;
+
+-- Letra h
+SELECT idNf, codigoProduto, quantidade FROM notaFiscal
+WHERE quantidade >= 10
+GROUP by idNf, codigoProduto;
