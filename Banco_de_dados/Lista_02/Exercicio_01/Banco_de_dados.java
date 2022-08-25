@@ -146,3 +146,8 @@ WHERE desconto > 0;
 
 SELECT n.idNf, n.idItem, n.codigoProduto, n.valorUnitario, n.desconto, (quantidade * valorUnitario) as valorTotal, (quantidade * valorUnitario) as valorVendido FROM notaFiscal n
 WHERE desconto = 0;
+
+-- Letra e
+SELECT n.idNf, sum(quantidade * valorUnitario) as valorTotal FROM notaFiscal n
+GROUP by n.idNf
+ORDER by valorTotal DESC;
