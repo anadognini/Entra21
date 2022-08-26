@@ -222,7 +222,6 @@ values (
 );
 
 -- Vendedor
-
 INSERT INTO vendedor (
    codigo,
    nome,
