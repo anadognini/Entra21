@@ -257,3 +257,8 @@ values (
 -- Letra a
 SELECT c.nomeCliente, c.codigoCliente as cpf, v.nome from cliente c, vendedor v 
 WHERE c.codVendedor = v.codigo;
+
+-- Letra b
+SELECT c.nomeCliente, p.codigoPedido FROM cliente c, pedido p 
+WHERE c.codigoCliente = p.codigoCliente
+ORDER BY nomeCliente, codigoPedido;
