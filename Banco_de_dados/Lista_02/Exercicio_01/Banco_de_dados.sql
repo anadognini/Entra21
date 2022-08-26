@@ -187,3 +187,9 @@ SELECT codigoProduto, min(desconto) as minimo, max(desconto) as maximo, avg(desc
 FROM notaFiscal n
 WHERE (desconto) > 0
 GROUP by codigoProduto;
+
+-- Letra l
+SELECT idNf, count(idItem) as qtdItens
+FROM notaFiscal
+GROUP by idNf
+HAVING qtdItens > 3;
